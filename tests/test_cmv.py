@@ -19,14 +19,7 @@ async def test_process():
                 with open(filepath, 'w') as file:
                     file.write(content)
 
-            print(f'{os.listdir(src_dir) = }')
-            print(f'{os.listdir(dest_dir) = }')
-
             await process(src_dir=src_dir,
                           dest_dir=dest_dir)
-
-            print(f'{os.listdir(src_dir) = }')
-            print(f'{os.listdir(dest_dir) = }')
-
             moved_filenames = os.listdir(dest_dir)
             assert set(filenames) == set(moved_filenames)

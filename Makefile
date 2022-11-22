@@ -1,3 +1,6 @@
+install:
+	@poetry install
+
 lint:
 	@poetry run flake8 --config flake8.cfg
 

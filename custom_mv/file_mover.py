@@ -3,6 +3,8 @@
 import asyncio
 import os
 
+import aiofiles
+
 
 def get_all_files(src_dir: str) -> list[str]:
     """Get all filename from dir."""
@@ -18,10 +20,10 @@ async def move_file(filename: str,
 
     src_path = os.path.join(src_dir, filename)
     dest_path = os.path.join(dest_dir, filename)
-    with open(src_path, 'rb') as file:
-        raw_data = file.read()
-    with open(dest_path, 'wb') as file:
-        file.write(raw_data)
+    async with aiofiles.open(src_path, 'r') as file:
+        raw_data = await file.read()
+    async with aiofiles.open(dest_path, 'w') as file:
+        await file.write(raw_data)
     os.remove(src_path)
 
 

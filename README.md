@@ -5,7 +5,7 @@
 [![Test Coverage](https://api.codeclimate.com/v1/badges/013d1748ac01c49688ca/test_coverage)](https://codeclimate.com/github/mnogom/custom-mv/test_coverage)
 
 ### Features:
-* Async overwrite files from dir to dir
+* Async move files from dir to dir
 
 ### Usage
 ```

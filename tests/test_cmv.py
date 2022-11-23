@@ -1,7 +1,6 @@
 import os
 import tempfile
 
-import aiofiles
 import pytest
 
 from custom_mv.file_mover import process
